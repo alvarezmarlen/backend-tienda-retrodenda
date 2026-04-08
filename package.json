@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "json-server --watch productos.json --port 8000"
+    "dev": "json-server --watch database.json --port 8000",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
