@@ -1,11 +1,15 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('database.json'); // Tu archivo de datos
+const router = jsonServer.router('database.json');
 const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 8000; // Render asignará un puerto automático
+
+// ESTA LÍNEA ES CLAVE: Render a veces necesita que forcemos el parsing de JSON
+server.use(jsonServer.bodyParser); 
 
 server.use(middlewares);
 server.use(router);
+
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
-  console.log('JSON Server está ejecutándose');
+  console.log(`JSON Server está listo en el puerto ${port}`);
 });
