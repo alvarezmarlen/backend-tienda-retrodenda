@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "json-server --watch database.json --port 8000",
-    "start": "json-server database.json --port $PORT"
+    "start": "json-server --host 0.0.0.0 database.json"
   },
   "keywords": [],
   "author": "",
