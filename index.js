@@ -3,9 +3,6 @@ const server = jsonServer.create();
 const router = jsonServer.router('database.json');
 const middlewares = jsonServer.defaults();
 
-// ESTA LÍNEA ES CLAVE: Render a veces necesita que forcemos el parsing de JSON
-server.use(jsonServer.bodyParser); 
-
 server.use(middlewares);
 server.use(router);
 
